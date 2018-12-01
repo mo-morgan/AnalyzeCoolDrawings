@@ -61,5 +61,7 @@ const QuickDraw = new function() {
 };
 
 function respondToBot() {
+
 }
+
 
