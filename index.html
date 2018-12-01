@@ -4,29 +4,51 @@
   <meta charset="UTF-8">
   <title>Analyze Cool Drawings</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" href="css/w3.css">
-  <link rel="stylesheet" href="css/style.css">
-
+  <!---->
+  <!--<link rel="stylesheet" href="css/w3.css">-->
+  <!--<link rel="stylesheet" href="css/style.css">-->
+  <style>
+    html {
+      background-color: lavender;
+    }
+    .main-canvas {
+      width: 500px;
+      height: 400px;
+      background-color: whitesmoke;
+      border: 1px solid black;
+    }
+    #options {
+      width: 500px;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+    #wrapper {
+      margin: auto;
+    }
+    li {
+      padding: 10px;
+      text-align: center;
+      transition: opacity;
+      opacity: 100%;
+    }
+  </style>
 </head>
 
 <body>
-  <button class="w3-btn w3-ripple w3-red" id="btnClear" onclick="clearDrawing()">clear</button>
-  <div id="wrapper">
-    <canvas id="canvas" resize></canvas>
-    <br>
-    <div id="options"></div>
-  </div>
 
-  <!-- Trigger/Open The Modal -->
-  <button class="w3-btn w3-ripple w3-green" id="btnInfo">?</button>
+<canvas class="main-canvas" id="canvas"></canvas>
+<ul id="options">
+  <li>One</li>
+  <li>Two</li>
+  <li>Three</li>
+</ul>
 
-  </div>
+<script src="js/sketcher.js"></script>
+<!--<script src='js/paper-0.9.25.min.js'></script>-->
+<!--<script src='js/highcharts-5.0.4.min.js'></script>-->
 
-  <script src='js/paper-0.9.25.min.js'></script>
-  <script src='js/highcharts-5.0.4.min.js'></script>
-
-  <script src="drawing.js"></script>
+<!--<script src="drawing.js"></script>-->
 
 </body>
 </html>
