@@ -7,8 +7,9 @@ let TOP = rect.top;
 
 console.log(CANVAS.getBoundingClientRect());
 const Sketcher = new function() {
-    const STROKE_SIZE = 4;
-    const THRESHOLD = 5;   // Dist at which a new point will be added
+    const STROKE_SIZE = 5;
+    const THRESHOLD = 3;   // Dist at which a new point will be added
+    let time = performance.now();
     let ctx = CANVAS.getContext('2d');
     ctx.lineWidth = STROKE_SIZE;
     let strokes = [];
@@ -25,6 +26,7 @@ const Sketcher = new function() {
             isMouseDown = false;
             if (strokes[currentStroke].length > 1) {
                 currentStroke++;
+                QuickDraw.search(CANVAS.width, CANVAS.height, getInk());
             } else {
                 strokes.pop();
             }
@@ -48,6 +50,7 @@ const Sketcher = new function() {
         strokes = [];
         currentStroke = 0;
         isMouseDown = false;
+        time = performance.now();
         draw();
     };
     this.undo = function() {
@@ -72,7 +75,7 @@ const Sketcher = new function() {
     };
 
     let getPoint = function(event) {
-        return [event.pageX - LEFT, event.pageY - TOP];
+        return [event.pageX - LEFT, event.pageY - TOP, event.timeStamp - time];
     };
 
     let dist = function(point1, point2) {
@@ -80,6 +83,20 @@ const Sketcher = new function() {
         let dy = point1[1] - point2[1];
         return Math.sqrt(dx*dx + dy*dy);
     };
+
+    let getInk = function() {
+        let ink = [[],[],[]];
+        for (let i = 0; i < strokes.length; i++) {
+            let stroke = strokes[i];
+            for (let j = 0; j < stroke.length; j++) {
+                let point = stroke[j];
+                ink[0].push(point[0]);
+                ink[1].push(point[1]);
+                ink[2].push(point[2]);
+            }
+        }
+        return ink;
+    }
 };
 
 // Register listeners
