@@ -1,8 +1,9 @@
 const QuickDraw = new function() {
     const URL = 'https://inputtools.google.com/request?ime=handwriting&app=quickdraw&dbg=1&cs=1&oe=UTF-8';
+    const OPTIONS = document.getElementById('options');
     this.search = function(width, height, ink) {
-        console.log("Searching: " + width + "x" + height);
-        console.log(ink);
+        console.debug("Searching: " + width + "x" + height);
+        console.debug(ink);
         let headers = {
             'Accept': '*/*',
             'Content-Type': 'application/json'
@@ -39,7 +40,19 @@ const QuickDraw = new function() {
         xhr.send(request_data);
     };
 
-    let parseResponse = function(text) {
-        console.log(text);
+    let parseResponse = function(response) {
+        let parsed = JSON.parse(response);
+        let list = parsed[1][0][1];
+        console.log(list);
+        OPTIONS.innerHTML = '';
+        for (let i = 0; i < 3; i++) {
+            if (i < list.length) {
+                let option = document.createElement('li');
+                option.innerHTML = list[i];
+                OPTIONS.appendChild(option);
+            } else {
+                break;
+            }
+        }
     };
 };
