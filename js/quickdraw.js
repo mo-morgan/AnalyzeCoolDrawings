@@ -47,8 +47,11 @@ const QuickDraw = new function() {
         OPTIONS.innerHTML = '';
         for (let i = 0; i < 3; i++) {
             if (i < list.length) {
+                let button = document.createElement('button');
+                button.onclick = respondToBot;
                 let option = document.createElement('li');
-                option.innerHTML = list[i];
+                button.innerHTML = list[i];
+                option.appendChild(button);
                 OPTIONS.appendChild(option);
             } else {
                 break;
@@ -56,3 +59,7 @@ const QuickDraw = new function() {
         }
     };
 };
+
+function respondToBot() {
+}
+
