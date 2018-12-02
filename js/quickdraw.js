@@ -1,3 +1,5 @@
+var word1, word2, word3;
+
 const QuickDraw = new function() {
     const URL = 'https://inputtools.google.com/request?ime=handwriting&app=quickdraw&dbg=1&cs=1&oe=UTF-8';
     const OPTIONS = document.getElementById('options');
@@ -43,13 +45,13 @@ const QuickDraw = new function() {
     let parseResponse = function(response) {
         let parsed = JSON.parse(response);
         let list = parsed[1][0][1];
-        console.log(list);
         OPTIONS.innerHTML = '';
         for (let i = 0; i < 3; i++) {
             if (i < list.length) {
                 let button = document.createElement('button');
                 button.onclick = () => {
-                    TEST_BOT.sendResponse(button.innerHTML);
+                    console.log(list[i]);
+                    TEST_BOT.sendResponse(list[i]);
                 };
                 let option = document.createElement('li');
                 button.innerHTML = list[i];
