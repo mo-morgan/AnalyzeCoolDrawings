@@ -1,0 +1,40 @@
+/*html {*/
+    /*background-color: lavender;*/
+/*}*/
+.main-canvas {
+    /*width: 1000px;*/
+    /*height: 400px;*/
+    background-color: whitesmoke;
+    border: 1px solid black;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 800px;
+}
+#options {
+    /*width: 500px;*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+    list-style-type: none;
+}
+li {
+    padding: 10px;
+    text-align: center;
+    transition: opacity;
+    opacity: 100%;
+}
+
+.scroll-to-top {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    display: none;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: white;
+    background: rgba(52, 58, 64, 0.5);
+    line-height: 45px;
+}
