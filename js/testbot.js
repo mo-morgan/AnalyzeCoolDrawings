@@ -1,6 +1,8 @@
-const TEST_BOT = new function() {
+// Interface for communicating with the slack test bot
+
+const TestBot = new function() {
     const URL = "https://shard-bail.glitch.me/sketch/draw";
-    const CHANNEL_ID = window.location.toString().split('?channel=')[1];
+    const MESSAGE_ID = window.location.toString().split('?key=')[1];
 
     this.sendResponse = function(answer) {
         console.log("Received: " + answer);
@@ -19,25 +21,23 @@ const TEST_BOT = new function() {
                 console.log("succ");
             } else {
                 console.log('Request failed, status: ' + xhr.status);
+                window.alert("MESSAGE_ID can only be used once!");
             }
         };
 
         let data = {
-            "channel": CHANNEL_ID,
+            "message_id": MESSAGE_ID,
             "word": answer
         };
 
         let request_data = JSON.stringify(data);
-        // let request_data = "?channel=" + CHANNEL_ID + "&word=" + answer;
-
-        // Send HTTP Request w/ Data Payload
         console.log("Sending data: " + request_data);
         xhr.send(request_data);
     };
 
     this.print = function() {
-        console.log("channel_id: " + CHANNEL_ID);
+        console.log("message_id: " + MESSAGE_ID);
     }
 };
 
-TEST_BOT.print();
+TestBot.print();

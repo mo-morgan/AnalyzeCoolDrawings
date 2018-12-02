@@ -1,3 +1,5 @@
+// Handles canvas drawing
+
 const CANVAS = document.getElementById("canvas");
 let rect = CANVAS.getBoundingClientRect();
 CANVAS.width = rect.width;
@@ -118,4 +120,12 @@ window.addEventListener("keypress", (e) => {
     } else if (e.key === 'x') {
         Sketcher.clear();
     }
+});
+
+window.addEventListener("resize", (e) => {
+    rect = CANVAS.getBoundingClientRect();
+    CANVAS.width = rect.width;
+    CANVAS.height = rect.height;
+    LEFT = rect.left;
+    TOP = rect.top;
 });
