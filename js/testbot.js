@@ -21,7 +21,7 @@ const TestBot = new function() {
                 console.log("succ");
             } else {
                 console.log('Request failed, status: ' + xhr.status);
-                alert("MESSAGE_ID can only be used once!");
+                window.alert("MESSAGE_ID can only be used once!");
             }
         };
 
