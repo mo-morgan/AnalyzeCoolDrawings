@@ -8,10 +8,16 @@
     border: 1px solid black;
     padding-left: 0;
     padding-right: 0;
+
     margin-left: auto;
     margin-right: auto;
     display: block;
     width: 800px;
+}
+
+.row {
+    margin-top: 3%;
+
 }
 #options {
     /*width: 500px;*/
@@ -40,13 +46,14 @@ li {
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 24px;
+    padding: 6px 20px;
+    font-size: 30px;
+    font-weight: bold;
     text-align: center;
     cursor: pointer;
     outline: none;
     color: #000000;
-    background-color: #2effeb;
+    background-color: #2ff5ff;
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
