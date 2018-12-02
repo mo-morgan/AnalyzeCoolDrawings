@@ -48,7 +48,9 @@ const QuickDraw = new function() {
         for (let i = 0; i < 3; i++) {
             if (i < list.length) {
                 let button = document.createElement('button');
-                button.onclick = respondToBot;
+                button.onclick = () => {
+                    TEST_BOT.sendResponse(button.innerHTML);
+                };
                 let option = document.createElement('li');
                 button.innerHTML = list[i];
                 option.appendChild(button);
@@ -59,9 +61,5 @@ const QuickDraw = new function() {
         }
     };
 };
-
-function respondToBot() {
-
-}
 
 
