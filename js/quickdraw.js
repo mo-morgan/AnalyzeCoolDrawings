@@ -50,7 +50,7 @@ const QuickDraw = new function() {
             if (i < list.length) {
                 let button = document.createElement('button');
                 button.onclick = () => {
-                    TestBot.sendResponse(button.innerHTML);
+                    TestBot.sendResponse(list[i]);
                 };
                 let option = document.createElement('li');
                 button.innerHTML = list[i];
