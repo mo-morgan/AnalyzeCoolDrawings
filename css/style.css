@@ -38,3 +38,25 @@ li {
     background: rgba(52, 58, 64, 0.5);
     line-height: 45px;
 }
+
+button {
+    padding: 10px 20px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #000000;
+    background-color: #2effeb;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+button:hover {background-color: #adecf2
+}
+
+button:active {
+    background-color: #adecf2;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
