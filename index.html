@@ -12,9 +12,20 @@
 <body>
 	
 	<div class="container">
-		<canvas class="main-canvas" id="canvas"></canvas>
-		<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Info</button>
-		<ul id="options"></ul>
+		<div class="row">
+			<div class="col col-lg 2">
+				<canvas class="main-canvas" id="canvas"></canvas>
+				<ul id="options"></ul>
+			</div>
+			<div class="col-md-auto">
+				<h2>Instructions</h2>
+				<br>
+				<p>Start drawing on the canvas!</p>
+				<p>Press <b>Z</b> to undo stroke</p>
+				<p>Press <b>X</b> to clear drawing</p>
+				<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Info</button>
+			</div>
+		</div>
 	</div>
 	
 	<div class="modal fade" id="myModal" role="dialog">
